@@ -1,0 +1,598 @@
+@import "@fontsource/instrument-serif/400.css";
+@import "@fontsource/instrument-serif/400-italic.css";
+@import "@fontsource/onest/400.css";
+@import "@fontsource/onest/500.css";
+@import "@fontsource/onest/600.css";
+@import "@fontsource/geist-mono/400.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =========================================================
+   BAHO COUNSELLING
+   2026 DESIGN SYSTEM
+   SKY + WHITE + TEAL ACCENT + GREEN NAVBAR
+   ========================================================= */
+
+:root {
+  /* Backgrounds */
+  --background: #EAF7FC;
+  --panel: #FFFFFF;
+  --sky: #D9F1F8;
+
+  /* Typography */
+  --ink: #123047;
+  --muted: #527086;
+
+  /* Clinical accent */
+  --pine: #087C8C;
+  --pine-hover: #066572;
+  --pine-tint: #DDF3F5;
+
+  /* Navbar (green) */
+  --nav-bg: #0F6B3E;
+  --nav-bg-hover: rgba(255, 255, 255, 0.14);
+  --nav-text: rgba(255, 255, 255, 0.88);
+  --nav-text-strong: #FFFFFF;
+  --nav-active-bg: #FFFFFF;
+  --nav-active-text: #0F6B3E;
+  --nav-border: #0B5430;
+
+  /* Borders */
+  --line: #C5E5EC;
+
+  /* Status */
+  --butter: #F59E0B;
+  --clay: #EF4444;
+  --clay-tint: #FEE2E2;
+  --leaf: #16A34A;
+  --leaf-tint: #DCFCE7;
+
+  /* Elevation + radius */
+  --shadow-sm: 0 1px 2px rgba(18, 48, 71, 0.06);
+  --shadow-md: 0 6px 20px -6px rgba(18, 48, 71, 0.14);
+  --radius: 12px;
+}
+
+/* =========================================================
+   DARK MODE
+   ========================================================= */
+
+.dark {
+  --background: #081923;
+  --panel: #102631;
+  --sky: #123640;
+
+  --ink: #F3FAFC;
+  --muted: #91B3C0;
+
+  --pine: #7CE4C7;
+  --pine-hover: #9AEBD5;
+  --pine-tint: #173E43;
+
+  --nav-bg: #0A3D25;
+  --nav-bg-hover: rgba(255, 255, 255, 0.10);
+  --nav-text: rgba(255, 255, 255, 0.82);
+  --nav-text-strong: #FFFFFF;
+  --nav-active-bg: #7CE4C7;
+  --nav-active-text: #08301D;
+  --nav-border: #072C1A;
+
+  --line: #23434E;
+
+  --leaf-tint: #123B24;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 6px 20px -6px rgba(0, 0, 0, 0.55);
+}
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+
+  font-size: 15px;
+  line-height: 24px;
+
+  scroll-behavior: smooth;
+  background-color: var(--background);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+
+  background-color: var(--background);
+  color: var(--ink);
+
+  font-family: "Onest", system-ui, sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  transition:
+    background-color 150ms ease-out,
+    color 150ms ease-out;
+}
+
+#root {
+  min-height: 100vh;
+  background-color: var(--background);
+}
+
+::selection {
+  background: var(--pine);
+  color: #FFFFFF;
+}
+
+/* =========================================================
+   TYPOGRAPHY
+   ========================================================= */
+
+body,
+p,
+li,
+input,
+textarea,
+select {
+  font-family: "Onest", system-ui, sans-serif;
+}
+
+h1, h2, h3 {
+  letter-spacing: -0.01em;
+}
+
+.font-serif {
+  font-family: "Instrument Serif", Georgia, serif;
+}
+
+.font-mono {
+  font-family: "Geist Mono", ui-monospace, monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+/* =========================================================
+   PANELS / CARDS
+   ========================================================= */
+
+.card,
+.stat-box {
+  background-color: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+
+  transition:
+    box-shadow 200ms ease-out,
+    transform 200ms ease-out,
+    border-color 200ms ease-out;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--pine);
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   NAVIGATION (GREEN)
+   ========================================================= */
+
+nav,
+.nav-bar,
+header {
+  background-color: var(--nav-bg);
+  color: var(--nav-text-strong);
+  border-bottom: 1px solid var(--nav-border);
+  box-shadow: 0 2px 10px -4px rgba(0, 0, 0, 0.25);
+
+  font-family: "Onest", system-ui, sans-serif;
+}
+
+nav,
+.nav-bar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+nav a,
+.nav-link,
+header button {
+  color: var(--nav-text);
+
+  font-family: "Onest", system-ui, sans-serif;
+  font-weight: 500;
+
+  border-radius: 8px;
+
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out;
+}
+
+nav a:hover,
+.nav-link:hover,
+header button:hover {
+  color: var(--nav-text-strong);
+  background-color: var(--nav-bg-hover);
+}
+
+nav a[class*="active"],
+.nav-link-active,
+nav a[aria-current="page"] {
+  color: var(--nav-active-text);
+  background-color: var(--nav-active-bg);
+}
+
+nav .font-serif,
+header .font-serif {
+  color: var(--nav-text-strong);
+}
+
+/* =========================================================
+   INTERACTIVE ELEMENTS
+   ========================================================= */
+
+button,
+a,
+[role="button"] {
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    opacity 150ms ease-out,
+    transform 150ms ease-out;
+}
+
+button:not(:disabled):active,
+[role="button"]:active {
+  transform: scale(0.98);
+}
+
+button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background-color: var(--pine);
+  color: #FFFFFF;
+  border-radius: 10px;
+  padding: 10px 18px;
+  font-weight: 600;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: var(--pine-hover);
+}
+
+.btn-ghost {
+  background-color: transparent;
+  color: var(--pine);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 10px 18px;
+  font-weight: 500;
+}
+
+.btn-ghost:hover:not(:disabled) {
+  background-color: var(--pine-tint);
+  border-color: var(--pine);
+}
+
+/* =========================================================
+   FORMS
+   ========================================================= */
+
+input,
+textarea,
+select {
+  background-color: var(--panel);
+  color: var(--ink);
+
+  border: 1px solid var(--line);
+  border-radius: 10px;
+
+  font-family: "Onest", system-ui, sans-serif;
+
+  transition:
+    background-color 150ms ease-out,
+    color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--muted);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--pine);
+  box-shadow: 0 0 0 3px var(--pine-tint);
+  outline: none;
+}
+
+/* =========================================================
+   FOCUS
+   ========================================================= */
+
+*:focus-visible {
+  outline: 2px solid var(--pine);
+  outline-offset: 2px;
+}
+
+nav *:focus-visible,
+header *:focus-visible {
+  outline-color: #FFFFFF;
+}
+
+/* =========================================================
+   BADGES
+   ========================================================= */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 500;
+  background-color: var(--pine-tint);
+  color: var(--pine);
+}
+
+.badge-success {
+  background-color: var(--leaf-tint);
+  color: var(--leaf);
+}
+
+.badge-danger {
+  background-color: var(--clay-tint);
+  color: var(--clay);
+}
+
+/* =========================================================
+   DIVIDERS
+   ========================================================= */
+
+.hr-line {
+  border: none;
+  border-top: 1px solid var(--line);
+}
+
+/* =========================================================
+   METADATA
+   ========================================================= */
+
+.step-label {
+  color: var(--muted);
+
+  font-family: "Geist Mono", ui-monospace, monospace;
+
+  font-size: 11px;
+  letter-spacing: 0.08em;
+
+  text-transform: none;
+}
+
+/* =========================================================
+   MATCH RING
+   ========================================================= */
+
+.match-ring {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.match-ring svg {
+  transform: rotate(-90deg);
+}
+
+/* =========================================================
+   PAGE ENTRANCE
+   ========================================================= */
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  animation: fade-up 280ms ease-out both;
+}
+
+/* =========================================================
+   SKELETON
+   ========================================================= */
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--background) 25%,
+    var(--line) 50%,
+    var(--background) 75%
+  );
+
+  background-size: 200% 100%;
+  border-radius: 6px;
+
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--line);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted);
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 640px) {
+  html {
+    font-size: 14px;
+  }
+
+  .card:hover {
+    transform: none;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* =========================================================
+   OVERRIDES v3: GREEN NAVBAR + UI/UX REFRESH
+   ========================================================= */
+
+body :is(header, nav) {
+  background: linear-gradient(135deg, #0F6B3E 0%, #15834B 100%) !important;
+  border-bottom: 1px solid #0B5430 !important;
+  box-shadow: 0 6px 20px -10px rgba(11, 84, 48, 0.6);
+}
+.dark body :is(header, nav),
+.dark :is(header, nav) {
+  background: linear-gradient(135deg, #06301D 0%, #0A3F26 100%) !important;
+  border-bottom: 1px solid #0F5A36 !important;
+}
+body :is(header, nav) :is(a, button, span, svg, p, div) {
+  color: rgba(255, 255, 255, 0.92) !important;
+}
+body :is(header, nav) .font-serif { color: #FFFFFF !important; }
+body :is(header, nav) .font-mono { color: rgba(255, 255, 255, 0.7) !important; }
+body :is(header, nav) :is(a, button) {
+  border-radius: 999px !important;
+  background-color: transparent !important;
+  border-color: transparent !important;
+}
+body :is(header, nav) :is(a, button):hover {
+  background-color: rgba(255, 255, 255, 0.16) !important;
+  color: #FFFFFF !important;
+}
+body :is(header, nav) :is(a[class*="active"], a[aria-current], [data-active="true"], a[class*="bg-"]) {
+  background-color: rgba(255, 255, 255, 0.20) !important;
+  color: #FFFFFF !important;
+  font-weight: 600 !important;
+}
+body :is(header, nav) :is(a[href*="register" i], a[href*="signup" i], a[href*="sign-up" i], button[class*="register" i]) {
+  background-color: #FFFFFF !important;
+  color: #0F6B3E !important;
+  font-weight: 600 !important;
+  box-shadow: 0 4px 12px -4px rgba(0, 0, 0, 0.3);
+}
+.dark body :is(header, nav) :is(a[href*="register" i], a[href*="signup" i], a[href*="sign-up" i]),
+.dark :is(header, nav) :is(a[href*="register" i], a[href*="signup" i], a[href*="sign-up" i]) {
+  background-color: #86EFAC !important;
+  color: #05261A !important;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  background-image:
+    radial-gradient(900px 420px at 100% -10%, rgba(21, 131, 75, 0.10), transparent 60%),
+    radial-gradient(700px 360px at -10% 10%, rgba(8, 124, 140, 0.10), transparent 60%);
+  background-attachment: fixed;
+}
+.dark body {
+  background-image:
+    radial-gradient(900px 420px at 100% -10%, rgba(21, 131, 75, 0.20), transparent 60%),
+    radial-gradient(700px 360px at -10% 10%, rgba(94, 234, 212, 0.07), transparent 60%);
+}
+h1, h2 { letter-spacing: -0.02em; }
+body main :is(a, button)[class*="bg-"],
+body section :is(a, button)[class*="bg-"] {
+  border-radius: 14px;
+  box-shadow: 0 8px 18px -8px rgba(15, 107, 62, 0.55);
+  transition: transform 150ms ease-out, box-shadow 150ms ease-out, background-color 150ms ease-out;
+}
+body main :is(a, button)[class*="bg-"]:hover,
+body section :is(a, button)[class*="bg-"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px -8px rgba(15, 107, 62, 0.6);
+}
+.card, .stat-box {
+  border-radius: 16px !important;
+  border-top: 3px solid #15834B !important;
+  box-shadow: 0 8px 24px -14px rgba(18, 48, 71, 0.3) !important;
+}
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 32px -14px rgba(15, 107, 62, 0.4) !important;
+}
+input:focus, textarea:focus, select:focus {
+  border-color: #15834B !important;
+  box-shadow: 0 0 0 4px rgba(21, 131, 75, 0.18) !important;
+  outline: none;
+}
+@keyframes fade-up { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+#root main, #root section:first-of-type { animation: fade-up 320ms ease-out both; }
+@media (prefers-reduced-motion: reduce) {
+  #root main, #root section:first-of-type { animation: none; }
+  html { scroll-behavior: auto; }
+}
