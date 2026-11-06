@@ -1,7 +1,7 @@
 # Baho Counselling
 
 An AI-Based Counsellor Recommendation System built for Baho Hospital, Kigali, Rwanda.
-Academic project by a student at [Your University Name].
+Academic project by a student at [Mount kigali university].
 
 ---
 
